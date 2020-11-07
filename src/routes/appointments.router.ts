@@ -5,8 +5,10 @@ import { getCustomRepository } from 'typeorm';
 import AppointmentRepository from '../repositories/AppointmentsRepository';
 import CreateAppointmentService from '../services/CreateAppointmentServices';
 
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const appointmentsRouter = express.Router();
+appointmentsRouter.use(ensureAuthenticated);
 
 appointmentsRouter.get('/', async (req, res) => {
 
