@@ -3,13 +3,13 @@ import express from 'express';
 import CreateUserServices from '../services/CreateUserServices';
 
 
-const appointmentsRouter = express.Router();
+const userRouter = express.Router();
 
 
 
 
 
-appointmentsRouter.post('/', async (req, res) => {
+userRouter.post('/', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -26,4 +26,4 @@ appointmentsRouter.post('/', async (req, res) => {
   }
 });
 
-export default appointmentsRouter;
+export default userRouter;
